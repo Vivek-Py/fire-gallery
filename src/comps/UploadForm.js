@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import ProgressBar from "./ProgressBar";
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+
   const types = ["image/jpeg", "image/png"];
 
   const changeHandler = (e) => {
@@ -15,7 +17,7 @@ const UploadForm = () => {
       console.log("--> Selected File Information:", selected);
     } else {
       setFile(null);
-      setError("Please select supported image formats (jpg or png)");
+      setError("Please select supported image format (jpg or png)");
       console.log("--> Invalid format for selected image");
     }
   };
@@ -30,6 +32,7 @@ const UploadForm = () => {
       <div className="output">
         {error && <div className="error">{error}</div>}
         {file && <div>{file.name}</div>}
+        {file && <ProgressBar file={file} setFile={setFile} />}
       </div>
     </form>
   );
