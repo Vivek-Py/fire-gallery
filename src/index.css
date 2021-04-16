@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 :root {
   --primary: #091e42;
@@ -109,7 +110,10 @@ label:hover {
 }
 
 .loginBtn {
-  visibility: hidden;
+  /*visibility: hidden;*/
+  font-family: "Lato", sans-serif !important;
+  pointer-events: none;
+  font-size: 12px !important;
 }
 
 /* progress bar styles */

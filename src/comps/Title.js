@@ -34,7 +34,7 @@ const Title = () => {
             PicBook
           </Typography>
           <Button className="loginBtn" color="inherit">
-            Coming Soon
+            capturing emotions
           </Button>
         </Toolbar>
       </AppBar>
