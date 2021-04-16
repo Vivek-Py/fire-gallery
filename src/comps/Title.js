@@ -31,10 +31,10 @@ const Title = () => {
             aria-label="menu"
           ></IconButton>
           <Typography className={classes.title} variant="h6">
-            pageBook
+            PicBook
           </Typography>
           <Button className="loginBtn" color="inherit">
-            Login
+            Coming Soon
           </Button>
         </Toolbar>
       </AppBar>

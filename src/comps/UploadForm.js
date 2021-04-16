@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import ProgressBar from "./ProgressBar";
+import { motion } from "framer-motion";
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
@@ -23,18 +24,41 @@ const UploadForm = () => {
   };
 
   return (
-    <form>
-      <label className="uploadIcon">
-        <input type="file" onChange={changeHandler} />
-        <CloudUploadIcon fontSize="large" />
-      </label>
-
-      <div className="output">
-        {error && <div className="error">{error}</div>}
-        {file && <div>{file.name}</div>}
-        {file && <ProgressBar file={file} setFile={setFile} />}
+    <div>
+      <div className="spanTitle">
+        <span>Get Started Today</span>
       </div>
-    </form>
+      <div class="things">
+        <div class="content">
+          <div class="arrow">
+            <div class="curve"></div>
+            <div class="point"></div>
+          </div>
+        </div>
+      </div>
+      <form>
+        <label>
+          <input type="file" onChange={changeHandler} />
+          <CloudUploadIcon className="uploadIcon" fontSize="large" />
+        </label>
+
+        <div layout className="output">
+          {error && (
+            <motion.div
+              initial={{ scale: 6, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="error"
+              style={{ visibility: "visible" }}
+            >
+              *{error}
+            </motion.div>
+          )}
+          {file && <div>{file.name}</div>}
+          {file && <ProgressBar file={file} setFile={setFile} />}
+        </div>
+      </form>
+    </div>
   );
 };
 
